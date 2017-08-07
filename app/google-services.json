@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "821859589192",
+    "firebase_url": "https://tonnerdelivery.firebaseio.com",
+    "project_id": "tonnerdelivery",
+    "storage_bucket": "tonnerdelivery.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:821859589192:android:1ad6bb16dc8d0c0f",
+        "android_client_info": {
+          "package_name": "dfsolutions.com.tonnerdelivery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "821859589192-b39apu229qpp703po5il4f1du4r86ue9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dfsolutions.com.tonnerdelivery",
+            "certificate_hash": "6f0a4bbd2f752aec2fd799e727217aba7a42ee09"
+          }
+        },
+        {
+          "client_id": "821859589192-talsrit6rr5pbc4vgiv8c4i8n997empm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwP2B1FOgLw8nevHydAYryxXUKBGDZIfE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "821859589192-talsrit6rr5pbc4vgiv8c4i8n997empm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

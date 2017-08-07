@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TonnerDelivery</string>
+    <string name="hint_email">Digite seu Email</string>
+    <string name="hint_senha">Digite sua senha</string>
+    <string name="botao_logar">Logar</string>
+    <string name="titulo_permissao_neg">Permissoões Negadas</string>
+    <string name="msg_permissao_neg">Para utilizar esse App é necessário aceitar as permissões</string>
+</resources>
