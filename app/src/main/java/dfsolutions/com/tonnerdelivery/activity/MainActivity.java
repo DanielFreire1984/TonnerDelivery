@@ -7,16 +7,19 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import dfsolutions.com.tonnerdelivery.R;
+import dfsolutions.com.tonnerdelivery.config.ConfiguracaoFirebase;
 
 public class MainActivity extends AppCompatActivity {
 
-    //private DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+    private DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //reference.child("teste").setValue(100);
+        reference = ConfiguracaoFirebase.getFirebase();
+        reference.child("funcionou").setValue(10);
+
     }
 }
