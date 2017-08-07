@@ -5,4 +5,7 @@
     <string name="botao_logar">Logar</string>
     <string name="titulo_permissao_neg">Permissoões Negadas</string>
     <string name="msg_permissao_neg">Para utilizar esse App é necessário aceitar as permissões</string>
+    <string name="msg_cadastre">Não tem conta? Cadastre-se!</string>
+    <string name="hint_digite_nome">Nome</string>
+    <string name="botao_cadastrar">Cadastrar</string>
 </resources>

@@ -4,4 +4,6 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="largura_logo">300dp</dimen>
     <dimen name="altura_logo">220dp</dimen>
+    <dimen name="largura_logo_cadastro">150dp</dimen>
+    <dimen name="altura_logo_cadastro">113dp</dimen>
 </resources>

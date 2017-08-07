@@ -47,9 +47,22 @@
         android:layout_height="wrap_content"
         android:text="@string/botao_logar"
         android:id="@+id/botao_logar_id"
-        android:layout_below="@+id/senha_id"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:background="@color/colorPrimaryDark"
-        android:textColor="@color/textColorPrimary" />
+        android:textColor="@color/textColorPrimary"
+        android:layout_below="@+id/senha_id"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="21dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/msg_cadastre"
+        android:id="@+id/textView"
+        android:layout_below="@+id/botao_logar_id"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
+        android:textColor="@color/textColorPrimary"
+        android:onClick="abrirCadastroUsuario"/>
 </RelativeLayout>

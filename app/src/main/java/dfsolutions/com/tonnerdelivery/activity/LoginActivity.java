@@ -2,6 +2,7 @@ package dfsolutions.com.tonnerdelivery.activity;
 
 import android.Manifest;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
@@ -88,5 +89,14 @@ public class LoginActivity extends AppCompatActivity {
         dialog.show();
 
     }
+
+    public void abrirCadastroUsuario(View view){
+
+        Intent intent = new Intent(LoginActivity.this, CadastroUsuario.class);
+        startActivity( intent );
+
+    }
+
+
 
 }
