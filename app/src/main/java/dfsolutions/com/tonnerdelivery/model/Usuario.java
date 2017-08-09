@@ -1,5 +1,10 @@
 package dfsolutions.com.tonnerdelivery.model;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Exclude;
+
+import dfsolutions.com.tonnerdelivery.config.ConfiguracaoFirebase;
+
 /**
  * Created by Daniel on 07/08/2017.
  */
@@ -16,9 +21,13 @@ public class Usuario {
 
     }
 
-    public String getId() {
-        return id;
+    public void salvar(){
+        DatabaseReference referenciaFirebase = ConfiguracaoFirebase.getFirebase();
+        referenciaFirebase.child("usuarios").child( getId()).setValue(this);
+
     }
+    @Exclude
+    public String getId() { return id; }
 
     public void setId(String id) {
         this.id = id;
@@ -40,6 +49,7 @@ public class Usuario {
         this.email = email;
     }
 
+    @Exclude
     public String getSenha() {
         return senha;
     }
