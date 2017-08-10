@@ -51,6 +51,8 @@ public class LoginActivity extends AppCompatActivity {
 
         Permissoes.validaPermissoes(1, this, permissoesNecessarias);
 
+        verificarUsuarioLogado();
+
         email = (EditText) findViewById(R.id.email_id);
         senha = (EditText) findViewById(R.id.senha_id);
         botaoLogar = (Button) findViewById(R.id.botao_logar_id);
@@ -59,20 +61,32 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                usuario = new Usuario();
-                String emailUsuario = email.getText().toString();
-                usuario.setEmail(emailUsuario);
-                usuario.setSenha(senha.getText().toString());
+                if(email.getText().toString().isEmpty() || senha.getText().toString().isEmpty()){
+                    Toast.makeText(LoginActivity.this, "Preencher campos Login e Senha", Toast.LENGTH_SHORT).show();
+                }else{
+                    usuario = new Usuario();
+                    String emailUsuario = email.getText().toString();
+                    usuario.setEmail(emailUsuario);
+                    usuario.setSenha(senha.getText().toString());
 
-                //Salvando dados em Preferencias (SharedPreference)
-                Preferencias preferencias = new Preferencias(getApplicationContext());
-                preferencias.salvarUsuarioPreferencias(emailUsuario, usuario.getNome());
-                validarLogin();
+                    //Salvando dados em Preferencias (SharedPreference)
+                    Preferencias preferencias = new Preferencias(getApplicationContext());
+                    preferencias.salvarUsuarioPreferencias(emailUsuario, usuario.getNome());
 
-                //HashMap<String, String> usuario = preferencias.getDadosUsuario();
-                //Log.i("Email: ", usuario.get("email"));
+                    validarLogin();
+
+                    //HashMap<String, String> usuario = preferencias.getDadosUsuario();
+                    //Log.i("Email: ", usuario.get("email"));
+                }
             }
         });
+    }
+
+    private void verificarUsuarioLogado(){
+        autenticacao = ConfiguracaoFirebase.getAutenticacaoFirebase();
+        if(autenticacao.getCurrentUser() != null){
+            abrirTelaPrincipal();
+        }
     }
 
     private void validarLogin(){
