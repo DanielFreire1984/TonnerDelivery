@@ -24,8 +24,8 @@ public class Usuario {
     public void salvar(){
         DatabaseReference referenciaFirebase = ConfiguracaoFirebase.getFirebase();
         referenciaFirebase.child("usuarios").child( getId()).setValue(this);
-
     }
+
     @Exclude
     public String getId() { return id; }
 
