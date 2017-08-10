@@ -8,9 +8,14 @@
     <string name="msg_cadastre">Não tem conta? Cadastre-se!</string>
     <string name="hint_digite_nome">Nome</string>
     <string name="botao_cadastrar">Cadastrar</string>
+    <!-- Atributos usados na Activity Cadastro Usuario utilizado no tratamento de exceptions de erros de cadastro -->
     <string name="erro_exception_cadastro_weak_password">Digite uma senha mais forte com mínimo 6 caracteres</string>
     <string name="erro_excetion_cadastro_auth_invalid">Digite um email válido</string>
     <string name="erro_excetion_cadastro_auth_user_colision">Email já cadastrado. Digite outro email</string>
     <string name="erro_excetion_cadastro_generico">Ao cadastrar usuário. Digite outro email</string>
+    <!-- Atributos usados na Activity Login utilizado no tratamento de exceptions de erros de Login -->
+    <string name="erro_exception_login_auth_invalid_user">Email não cadastrado ou o usuário foi bloqueado</string>
+    <string name="erro_exception_login_auth_invalid_password">Senha incorreta. Tente novamente</string>
+    <string name="erro_exception_login_generico">Erro ao logar usuário</string>
 
 </resources>

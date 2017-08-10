@@ -12,7 +12,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.firebase.database.DatabaseReference;
 
 import java.util.HashMap;
@@ -21,12 +28,15 @@ import dfsolutions.com.tonnerdelivery.R;
 import dfsolutions.com.tonnerdelivery.config.ConfiguracaoFirebase;
 import dfsolutions.com.tonnerdelivery.helper.Permissoes;
 import dfsolutions.com.tonnerdelivery.helper.Preferencias;
+import dfsolutions.com.tonnerdelivery.model.Usuario;
 
 public class LoginActivity extends AppCompatActivity {
 
     private EditText email;
     private EditText senha;
     private Button botaoLogar;
+    private Usuario usuario;
+    private FirebaseAuth autenticacao;
 
     //lista de permissoes necessárias para utilizar o app
     private String[] permissoesNecessarias = {
@@ -49,17 +59,50 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                usuario = new Usuario();
                 String emailUsuario = email.getText().toString();
+                usuario.setEmail(emailUsuario);
+                usuario.setSenha(senha.getText().toString());
 
                 //Salvando dados em Preferencias (SharedPreference)
                 Preferencias preferencias = new Preferencias(getApplicationContext());
-                preferencias.salvarUsuarioPreferencias(emailUsuario);
+                preferencias.salvarUsuarioPreferencias(emailUsuario, usuario.getNome());
+                validarLogin();
 
                 //HashMap<String, String> usuario = preferencias.getDadosUsuario();
                 //Log.i("Email: ", usuario.get("email"));
             }
         });
+    }
 
+    private void validarLogin(){
+
+        autenticacao = ConfiguracaoFirebase.getAutenticacaoFirebase();
+        autenticacao.signInWithEmailAndPassword(
+                usuario.getEmail(),
+                usuario.getSenha()
+        ).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    Toast.makeText(LoginActivity.this, "Usuário logado com sucesso", Toast.LENGTH_SHORT).show();
+                    abrirTelaPrincipal();
+                }else{
+                    String erroExecption = "";
+                    try {
+                        throw task.getException();
+                    }catch (FirebaseAuthInvalidUserException e){
+                        erroExecption = "Email não cadastrado ou o usuário foi bloqueado";
+                    }catch (FirebaseAuthInvalidCredentialsException e){
+                        erroExecption = "Senha incorreta. Tente novamente";
+                    }catch (Exception e){
+                        erroExecption = "Erro ao logar usuário";
+                        e.printStackTrace();
+                    }
+                    Toast.makeText(LoginActivity.this, erroExecption, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     @Override
@@ -71,7 +114,6 @@ public class LoginActivity extends AppCompatActivity {
             if(resultado == PackageManager.PERMISSION_DENIED){
                 alertaValidacaoPermissao();
             }
-
         }
     }
 
@@ -93,13 +135,17 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    private void abrirTelaPrincipal(){
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     public void abrirCadastroUsuario(View view){
 
         Intent intent = new Intent(LoginActivity.this, CadastroUsuario.class);
         startActivity( intent );
 
     }
-
-
 
 }
