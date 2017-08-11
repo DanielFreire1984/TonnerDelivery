@@ -8,6 +8,7 @@
     <string name="msg_cadastre">Não tem conta? Cadastre-se!</string>
     <string name="hint_digite_nome">Nome</string>
     <string name="botao_cadastrar">Cadastrar</string>
+    <string name="action_settings">Configuração</string>
     <!-- Atributos usados na Activity Cadastro Usuario utilizado no tratamento de exceptions de erros de cadastro -->
     <string name="erro_exception_cadastro_weak_password">Digite uma senha mais forte com mínimo 6 caracteres</string>
     <string name="erro_excetion_cadastro_auth_invalid">Digite um email válido</string>
