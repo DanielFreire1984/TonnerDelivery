@@ -3,6 +3,8 @@ package dfsolutions.com.tonnerdelivery.activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import dfsolutions.com.tonnerdelivery.R;
+
 public class CadastroProduto extends AppCompatActivity {
 
     @Override
