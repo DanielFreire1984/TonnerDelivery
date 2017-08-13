@@ -21,7 +21,8 @@
         <activity android:name=".activity.MainActivity" />
         <activity
             android:name=".activity.CadastroUsuario"
-            android:parentActivityName=".activity.MainActivity"></activity>
+            android:parentActivityName=".activity.MainActivity" />
+        <activity android:name=".activity.CadastroProduto"></activity>
     </application>
 
 </manifest>
