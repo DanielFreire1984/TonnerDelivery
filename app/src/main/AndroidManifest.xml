@@ -27,6 +27,11 @@
             android:name=".activity.CadastroUsuario"
             android:parentActivityName=".activity.MainActivity" />
         <activity android:name=".activity.CadastroProduto"></activity>
+
+        <provider android:authorities="com.facebook.app.FacebookContentProvider109393189754072"
+            android:name="com.facebook.FacebookContentProvider"
+            android:exported="true" />
+
     </application>
 
 </manifest>
