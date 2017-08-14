@@ -20,5 +20,9 @@
     <string name="erro_exception_login_auth_invalid_user">Email não cadastrado ou o usuário foi bloqueado</string>
     <string name="erro_exception_login_auth_invalid_password">Senha incorreta. Tente novamente</string>
     <string name="erro_exception_login_generico">Erro ao logar usuário</string>
+    <string name="facebook_app_id">109393189754072</string>
+    <string name="account_kit_client_token">4e7f29ebb0e38e9aa150eb7bfe5764c7</string>
+    <string name="ak_login_protocol_scheme">ak109393189754072</string>
+    <string name="fb_login_protocol_scheme">fb109393189754072</string>
 
 </resources>

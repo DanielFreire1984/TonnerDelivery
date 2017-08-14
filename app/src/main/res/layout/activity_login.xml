@@ -64,4 +64,16 @@
         android:layout_marginTop="19dp"
         android:textColor="@color/textColorPrimary"
         android:onClick="abrirCadastroUsuario"/>
+
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button_fb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="37dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView" />
+
 </RelativeLayout>
