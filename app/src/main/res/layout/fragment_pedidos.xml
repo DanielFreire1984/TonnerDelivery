@@ -12,5 +12,6 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Pedidos"
         android:id="@+id/textView3"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:textColor="@android:color/black" />
 </FrameLayout>
