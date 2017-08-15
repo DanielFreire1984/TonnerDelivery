@@ -25,4 +25,7 @@
     <string name="ak_login_protocol_scheme">ak109393189754072</string>
     <string name="fb_login_protocol_scheme">fb109393189754072</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
