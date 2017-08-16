@@ -97,7 +97,6 @@ public class CadastroUsuario extends AppCompatActivity {
                 }
             }
         });
-
     }
 
     private void abrirLoginUsuario(){
