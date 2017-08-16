@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void abrirCadastroProduto(){
-        //Intent intent = new Intent(MainActivity.this, CadastroProduto.class);
-        //startActivity(intent);
+        Intent intent = new Intent(MainActivity.this, CadastroProduto.class);
+        startActivity(intent);
     }
 }

@@ -28,7 +28,7 @@
             android:parentActivityName=".activity.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="dfsolutions.com.tonnerdelivery.activity.MainActivity"></meta-data>
+                android:value="dfsolutions.com.tonnerdelivery.activity.MainActivity" />
         </activity>
 
         <provider
@@ -36,6 +36,12 @@
             android:authorities="com.facebook.app.FacebookContentProvider109393189754072"
             android:exported="true" />
 
+        <activity android:name=".activity.CadastroProduto"
+            android:parentActivityName=".activity.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="dfsolutions.com.tonnerdelivery.activity.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
