@@ -24,6 +24,8 @@
     <string name="account_kit_client_token">4e7f29ebb0e38e9aa150eb7bfe5764c7</string>
     <string name="ak_login_protocol_scheme">ak109393189754072</string>
     <string name="fb_login_protocol_scheme">fb109393189754072</string>
+    <!-- Atributos usados nas Toolbars -->
+    <string name="tb_title_cadastro_produto">Cadastrar Produto</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

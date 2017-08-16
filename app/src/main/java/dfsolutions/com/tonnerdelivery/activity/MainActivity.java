@@ -74,15 +74,23 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.action_settings:
                 return true;
+            case R.id.action_add_produto:
+                abrirCadastroProduto();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
-    public void deslogarUsuario(){
+    private void deslogarUsuario(){
         autenticacao.signOut();
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    private void abrirCadastroProduto(){
+        //Intent intent = new Intent(MainActivity.this, CadastroProduto.class);
+        //startActivity(intent);
     }
 }
