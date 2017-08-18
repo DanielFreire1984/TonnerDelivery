@@ -19,6 +19,10 @@
     <!-- Atributos usados na Activity Cadastro de Produto -->
     <string name="titulo_tipo_produto">Tipo de Produto: </string>
     <string name="titulo_marca_produto">Marca: </string>
+    <string name="titulo_produto">Título: </string>
+    <string name="titulo_descricao_produto">Descrição: </string>
+    <string name="hint_titulo_produto">Insira o título do produto</string>
+    <string name="hint_descricao_produto">Insira uma breve descrição do produto</string>
 
     <!-- Atributos usados na Activity Login utilizado no tratamento de exceptions de erros de Login -->
     <string name="erro_exception_login_auth_invalid_user">Email não cadastrado ou o usuário foi bloqueado</string>

@@ -15,26 +15,72 @@
         android:layout_height="wrap_content"
         android:text="@string/titulo_tipo_produto"
         android:textColor="@color/textColorActivity"
-        android:textSize="16dp" />
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"/>
 
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/spinner_tipo_produto_id"
-        android:popupBackground="@android:color/white" />
+        android:popupBackground="@android:color/white"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/titulo_marca_produto"
         android:textColor="@color/textColorActivity"
-        android:textSize="16dp" />
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"/>
 
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/spinner_marca_produto_id"
-        android:popupBackground="@android:color/white" />
+        android:popupBackground="@android:color/white"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo_produto"
+        android:textColor="@color/textColorActivity"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:hint="@string/hint_titulo_produto"
+        android:id="@+id/tv_titulo_produto_id"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo_descricao_produto"
+        android:textColor="@color/textColorActivity"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:hint="@string/hint_descricao_produto"
+        android:id="@+id/tv_descricao_produto_id"/>
 
 
 </LinearLayout>
