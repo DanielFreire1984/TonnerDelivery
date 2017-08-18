@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:text="@string/titulo_tipo_produto"
         android:textColor="@color/textColorActivity"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="5dp"/>
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:text="@string/titulo_marca_produto"
         android:textColor="@color/textColorActivity"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="5dp"/>
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:text="@string/titulo_produto"
         android:textColor="@color/textColorActivity"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="5dp"/>
@@ -61,6 +61,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="5dp"
+        android:textColor="@color/textColorActivity"
+        android:textColorHint="@color/textColorHint"
         android:hint="@string/hint_titulo_produto"
         android:id="@+id/tv_titulo_produto_id"/>
 
@@ -69,7 +71,7 @@
         android:layout_height="wrap_content"
         android:text="@string/titulo_descricao_produto"
         android:textColor="@color/textColorActivity"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="5dp"/>
@@ -79,8 +81,42 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="5dp"
+        android:textColor="@color/textColorActivity"
+        android:textColorHint="@color/textColorHint"
         android:hint="@string/hint_descricao_produto"
-        android:id="@+id/tv_descricao_produto_id"/>
+        android:id="@+id/tv_descricao_produto_id" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo_valor_produto"
+        android:textColor="@color/textColorActivity"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:inputType="numberDecimal"
+        android:textColor="@color/textColorActivity"
+        android:hint="@string/hint_valor_produto"
+        android:textColorHint="@color/textColorHint"
+        android:id="@+id/tv_valor_produto_id" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/botao_cadastrar_produto"
+        android:id="@+id/bt_cadastrar_produto_id"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="5dp"
+        android:theme="@style/botaoPadrao"/>
 
 
 </LinearLayout>

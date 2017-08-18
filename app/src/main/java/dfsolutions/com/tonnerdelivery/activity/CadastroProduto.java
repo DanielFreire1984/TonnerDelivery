@@ -3,27 +3,37 @@ package dfsolutions.com.tonnerdelivery.activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import dfsolutions.com.tonnerdelivery.R;
+import dfsolutions.com.tonnerdelivery.model.Produtos;
 
 public class CadastroProduto extends AppCompatActivity {
 
     private Toolbar toolbar;
-    private Spinner spinnerProduto;
-    private Spinner spinnerMarca;
-    private String selecaoItemSpinnerProduto;
-    private String selecaoItemSpinnerMarca;
+    private Spinner spinnerProduto, spinnerMarca;
+    private String selecaoItemSpinnerProduto, selecaoItemSpinnerMarca;
+    private EditText titulo, descricao, valor;
+    private Button botaoCadastrarProduto;
+    private Produtos produtos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_produto);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar_cadastro_produto_id);
-        spinnerProduto = (Spinner) findViewById(R.id.spinner_tipo_produto_id);
-        spinnerMarca = (Spinner) findViewById(R.id.spinner_marca_produto_id);
+        toolbar         = (Toolbar) findViewById(R.id.toolbar_cadastro_produto_id);
+        spinnerProduto  = (Spinner) findViewById(R.id.spinner_tipo_produto_id);
+        spinnerMarca    = (Spinner) findViewById(R.id.spinner_marca_produto_id);
+        titulo          = (EditText) findViewById(R.id.tv_titulo_produto_id);
+        descricao       = (EditText) findViewById(R.id.tv_descricao_produto_id);
+        valor           = (EditText) findViewById(R.id.tv_valor_produto_id);
+        botaoCadastrarProduto = (Button) findViewById(R.id.bt_cadastrar_produto_id);
 
         //Configurando a toolbar
         toolbar.setTitle(R.string.tb_title_cadastro_produto);
@@ -41,7 +51,39 @@ public class CadastroProduto extends AppCompatActivity {
         spinnerAdapterMarca.createFromResource(this, R.array.spinner_marca_options, R.layout.snipper_item);
         spinnerMarca.setAdapter(spinnerAdapterMarca);
 
+        //Tratando a selecao do Snipper tipo de Produto
+        spinnerProduto.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        //Tratando a selecao do Snipper tipo de Produto
+        spinnerMarca.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
+        botaoCadastrarProduto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                produtos = new Produtos();
+            }
+        });
 
     }
 }

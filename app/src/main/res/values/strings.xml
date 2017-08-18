@@ -3,6 +3,7 @@
     <string name="hint_email">Digite seu Email</string>
     <string name="hint_senha">Digite sua senha</string>
     <string name="botao_logar">Logar</string>
+    <string name="botao_cadastrar_produto">Cadastrar</string>
     <string name="titulo_permissao_neg">Permissoões Negadas</string>
     <string name="msg_permissao_neg">Para utilizar esse App é necessário aceitar as permissões</string>
     <string name="msg_cadastre">Não tem conta? Cadastre-se!</string>
@@ -21,8 +22,10 @@
     <string name="titulo_marca_produto">Marca: </string>
     <string name="titulo_produto">Título: </string>
     <string name="titulo_descricao_produto">Descrição: </string>
+    <string name="titulo_valor_produto">Valor: </string>
     <string name="hint_titulo_produto">Insira o título do produto</string>
     <string name="hint_descricao_produto">Insira uma breve descrição do produto</string>
+    <string name="hint_valor_produto">Insira o valor do produto</string>
 
     <!-- Atributos usados na Activity Login utilizado no tratamento de exceptions de erros de Login -->
     <string name="erro_exception_login_auth_invalid_user">Email não cadastrado ou o usuário foi bloqueado</string>

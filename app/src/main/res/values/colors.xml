@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#033551</color>
     <color name="textColorPrimary">#ffffff</color>
     <color name="textColorActivity">#000000</color>
+    <color name="textColorHint">#FF7A7A7A</color>
     <color name="colorAccent">#FF3598CF</color>
     <color name="snipper_item">#000000</color>
 </resources>
