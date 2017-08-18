@@ -16,6 +16,10 @@
     <string name="erro_excetion_cadastro_auth_invalid">Digite um email válido</string>
     <string name="erro_excetion_cadastro_auth_user_colision">Email já cadastrado. Digite outro email</string>
     <string name="erro_excetion_cadastro_generico">Ao cadastrar usuário. Digite outro email</string>
+    <!-- Atributos usados na Activity Cadastro de Produto -->
+    <string name="titulo_tipo_produto">Tipo de Produto: </string>
+    <string name="titulo_marca_produto">Marca: </string>
+
     <!-- Atributos usados na Activity Login utilizado no tratamento de exceptions de erros de Login -->
     <string name="erro_exception_login_auth_invalid_user">Email não cadastrado ou o usuário foi bloqueado</string>
     <string name="erro_exception_login_auth_invalid_password">Senha incorreta. Tente novamente</string>
@@ -26,6 +30,32 @@
     <string name="fb_login_protocol_scheme">fb109393189754072</string>
     <!-- Atributos usados nas Toolbars -->
     <string name="tb_title_cadastro_produto">Cadastrar Produto</string>
+    <!-- Itens opçoes spinner Tipo de produto na tela cadastro produto -->
+    <string name="item_spinner_selecione_tipo_de_produto">Selecione o tipo de produto</string>
+    <string name="item_spinner_cartucho">Cartucho</string>
+    <string name="item_spinner_tonner">Tonner</string>
+    <!-- Itens opçoes spinner Marca de produtos na tela cadastro produto -->
+    <string name="item_spinner_marca_selecione_a_marca">Selecione a marca</string>
+    <string name="item_spinner_marca_hp">HP</string>
+    <string name="item_spinner_marca_canon">Canon</string>
+    <string name="item_spinner_marca_epson">Epson</string>
+    <string name="item_spinner_marca_samsung">Samsung</string>
+    <string name="item_spinner_marca_outro">Outra</string>
+    <!-- Array Itens Spinner Tipo de Produto -->
+    <string-array name="spinner_produto_options">
+        <item>@string/item_spinner_selecione_tipo_de_produto</item>
+        <item>@string/item_spinner_cartucho</item>
+        <item>@string/item_spinner_tonner</item>
+    </string-array>
+    <!-- Array Itens Spinner Marca do Produto -->
+    <string-array name="spinner_marca_options">
+        <item>@string/item_spinner_marca_selecione_a_marca</item>
+        <item>@string/item_spinner_marca_hp</item>
+        <item>@string/item_spinner_marca_canon</item>
+        <item>@string/item_spinner_marca_epson</item>
+        <item>@string/item_spinner_marca_samsung</item>
+        <item>@string/item_spinner_marca_outro</item>
+    </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
