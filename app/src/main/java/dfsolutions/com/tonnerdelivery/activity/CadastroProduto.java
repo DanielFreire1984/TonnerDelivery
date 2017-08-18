@@ -13,7 +13,8 @@ public class CadastroProduto extends AppCompatActivity {
     private Toolbar toolbar;
     private Spinner spinnerProduto;
     private Spinner spinnerMarca;
-    private String selecaoItemSpinner;
+    private String selecaoItemSpinnerProduto;
+    private String selecaoItemSpinnerMarca;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
