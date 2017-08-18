@@ -1,5 +1,6 @@
 package dfsolutions.com.tonnerdelivery.activity;
 
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -10,6 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import dfsolutions.com.tonnerdelivery.R;
 import dfsolutions.com.tonnerdelivery.model.Produtos;
 
@@ -18,6 +22,8 @@ public class CadastroProduto extends AppCompatActivity {
     private Toolbar toolbar;
     private Spinner spinnerProduto, spinnerMarca;
     private String selecaoItemSpinnerProduto, selecaoItemSpinnerMarca;
+    private ArrayList<String> listItemTipo;
+    private ArrayList<String> listItemMarca;
     private EditText titulo, descricao, valor;
     private Button botaoCadastrarProduto;
     private Produtos produtos;
@@ -55,6 +61,21 @@ public class CadastroProduto extends AppCompatActivity {
         spinnerProduto.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                listItemTipo = new ArrayList<String>();
+                Resources res = getResources();
+                String[] headers = res.getStringArray(R.array.spinner_produto_options);
+                listItemTipo = (ArrayList)Arrays.asList(headers);
+                switch (i){
+                    case 0:
+                        selecaoItemSpinnerProduto = listItemTipo.get(0);
+                        break;
+                    case 1:
+                        selecaoItemSpinnerProduto = listItemTipo.get(1);
+                        break;
+                    case 2:
+                        selecaoItemSpinnerProduto = listItemTipo.get(2);
+                        break;
+                }
 
             }
 
@@ -68,6 +89,30 @@ public class CadastroProduto extends AppCompatActivity {
         spinnerMarca.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                listItemMarca = new ArrayList<String>();
+                Resources res = getResources();
+                String[] headers = res.getStringArray(R.array.spinner_produto_options);
+                listItemMarca = (ArrayList)Arrays.asList(headers);
+                switch (i){
+                    case 0:
+                        selecaoItemSpinnerMarca = listItemMarca.get(0);
+                        break;
+                    case 1:
+                        selecaoItemSpinnerMarca = listItemMarca.get(1);
+                        break;
+                    case 2:
+                        selecaoItemSpinnerMarca = listItemMarca.get(2);
+                        break;
+                    case 3:
+                        selecaoItemSpinnerMarca = listItemMarca.get(3);
+                        break;
+                    case 4:
+                        selecaoItemSpinnerMarca = listItemMarca.get(4);
+                        break;
+                    case 5:
+                        selecaoItemSpinnerMarca = listItemMarca.get(5);
+                        break;
+                }
 
             }
 
