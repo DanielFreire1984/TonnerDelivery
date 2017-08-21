@@ -22,7 +22,7 @@
     <string name="titulo_marca_produto">Marca: </string>
     <string name="titulo_produto">Título: </string>
     <string name="titulo_descricao_produto">Descrição: </string>
-    <string name="titulo_valor_produto">Valor: </string>
+    <string name="titulo_valor_produto">Valor: (R$)</string>
     <string name="hint_titulo_produto">Insira o título do produto</string>
     <string name="hint_descricao_produto">Insira uma breve descrição do produto</string>
     <string name="hint_valor_produto">Insira o valor do produto</string>

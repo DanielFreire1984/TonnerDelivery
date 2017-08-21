@@ -102,6 +102,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginLeft="5dp"
         android:inputType="numberDecimal"
+        android:digits="0123456789.,"
         android:textColor="@color/textColorActivity"
         android:hint="@string/hint_valor_produto"
         android:textColorHint="@color/textColorHint"

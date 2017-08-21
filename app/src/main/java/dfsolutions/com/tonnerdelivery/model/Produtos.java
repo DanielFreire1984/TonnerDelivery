@@ -1,14 +1,24 @@
 package dfsolutions.com.tonnerdelivery.model;
 
+import com.google.firebase.database.DatabaseReference;
+
+import dfsolutions.com.tonnerdelivery.config.ConfiguracaoFirebase;
+
 /**
  * Created by Daniel on 18/08/2017.
  */
 public class Produtos {
 
-    private String tipo, marca, titulo, descricao;
-    private Double valor;
+    private String tipo, marca, titulo, descricao, valorStg;
+    private double valorDb;
 
     public Produtos() {
+    }
+
+    public void salvar(){
+        DatabaseReference referenciaFirebase = ConfiguracaoFirebase.getFirebase();
+        valorDb = Double.parseDouble(valorStg);
+        referenciaFirebase.child("produtos").setValue(this);
     }
 
     public String getTipo() {
@@ -43,12 +53,20 @@ public class Produtos {
         this.descricao = descricao;
     }
 
-    public Double getValor() {
-        return valor;
+    public double getValorDb() {
+        return valorDb;
     }
 
-    public void setValor(Double valor) {
-        this.valor = valor;
+    public void setValorDb(double valorDb) {
+        this.valorDb = valorDb;
+    }
+
+    public String getValorStg() {
+        return valorStg;
+    }
+
+    public void setValorStg(String valorStg) {
+        this.valorStg = valorStg;
     }
 
 }

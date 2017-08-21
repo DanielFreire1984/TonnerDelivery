@@ -4,15 +4,19 @@ import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import dfsolutions.com.tonnerdelivery.R;
 import dfsolutions.com.tonnerdelivery.model.Produtos;
@@ -41,6 +45,7 @@ public class CadastroProduto extends AppCompatActivity {
         valor           = (EditText) findViewById(R.id.tv_valor_produto_id);
         botaoCadastrarProduto = (Button) findViewById(R.id.bt_cadastrar_produto_id);
 
+
         //Configurando a toolbar
         toolbar.setTitle(R.string.tb_title_cadastro_produto);
         toolbar.setNavigationIcon(R.drawable.ic_action_arrow_left);
@@ -61,10 +66,11 @@ public class CadastroProduto extends AppCompatActivity {
         spinnerProduto.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                listItemTipo = new ArrayList<String>();
-                Resources res = getResources();
-                String[] headers = res.getStringArray(R.array.spinner_produto_options);
-                listItemTipo = (ArrayList)Arrays.asList(headers);
+                //listItemTipo = new ArrayList<String>();
+                List<String> listItemTipo = Arrays.asList(getResources().getStringArray(R.array.spinner_produto_options));
+                //Resources res = getResources();
+                //String[] headers = res.getStringArray(R.array.spinner_produto_options);
+                //listItemTipo = Arrays.asList(headers);
                 switch (i){
                     case 0:
                         selecaoItemSpinnerProduto = listItemTipo.get(0);
@@ -89,10 +95,11 @@ public class CadastroProduto extends AppCompatActivity {
         spinnerMarca.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                listItemMarca = new ArrayList<String>();
-                Resources res = getResources();
-                String[] headers = res.getStringArray(R.array.spinner_produto_options);
-                listItemMarca = (ArrayList)Arrays.asList(headers);
+                //listItemMarca = new ArrayList<String>();
+                //Resources res = getResources();
+                //String[] headers = res.getStringArray(R.array.spinner_produto_options);
+                //listItemMarca = (ArrayList)Arrays.asList(headers);
+                List<String> listItemMarca = Arrays.asList(getResources().getStringArray(R.array.spinner_marca_options));
                 switch (i){
                     case 0:
                         selecaoItemSpinnerMarca = listItemMarca.get(0);
@@ -126,9 +133,39 @@ public class CadastroProduto extends AppCompatActivity {
         botaoCadastrarProduto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                Double valor1;
+
                 produtos = new Produtos();
+                produtos.setTipo(selecaoItemSpinnerProduto);
+                produtos.setMarca(selecaoItemSpinnerMarca);
+                produtos.setTitulo(titulo.getText().toString());
+                produtos.setDescricao(descricao.getText().toString());
+                //Log.i("VALOR", produtos.getValor().toString());
+
+                produtos.setValorStg(valor.getText().toString());
+                //produtos.setValor(Double.parseDouble(valor.getText().toString()));
+                //Log.i("VALOR", produtos.getValor().toString());
+
+                if(selecaoItemSpinnerProduto.equals("Selecione o tipo de produto") ||
+                        selecaoItemSpinnerMarca.equals("Selecione a marca") ||
+                        produtos.getTitulo().isEmpty() ||
+                        produtos.getDescricao().isEmpty() ||
+                        produtos.getValorStg().isEmpty() ){
+
+                    Toast.makeText(CadastroProduto.this, "Preencha todos os campos para cadastrar!!", Toast.LENGTH_LONG).show();
+
+                }else{
+                    CadastrarProduto();
+                }
+
             }
         });
 
     }
+
+    private void CadastrarProduto(){
+
+    }
+
 }
