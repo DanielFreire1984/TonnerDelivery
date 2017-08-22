@@ -67,11 +67,8 @@ public class CadastroProduto extends AppCompatActivity {
         spinnerProduto.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                //listItemTipo = new ArrayList<String>();
                 List<String> listItemTipo = Arrays.asList(getResources().getStringArray(R.array.spinner_produto_options));
-                //Resources res = getResources();
-                //String[] headers = res.getStringArray(R.array.spinner_produto_options);
-                //listItemTipo = Arrays.asList(headers);
+
                 switch (i){
                     case 0:
                         selecaoItemSpinnerProduto = listItemTipo.get(0);
@@ -96,11 +93,8 @@ public class CadastroProduto extends AppCompatActivity {
         spinnerMarca.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                //listItemMarca = new ArrayList<String>();
-                //Resources res = getResources();
-                //String[] headers = res.getStringArray(R.array.spinner_produto_options);
-                //listItemMarca = (ArrayList)Arrays.asList(headers);
                 List<String> listItemMarca = Arrays.asList(getResources().getStringArray(R.array.spinner_marca_options));
+
                 switch (i){
                     case 0:
                         selecaoItemSpinnerMarca = listItemMarca.get(0);
@@ -149,7 +143,7 @@ public class CadastroProduto extends AppCompatActivity {
                         produtos.getValor().isEmpty() ||
                         produtos.getQtd().isEmpty()){
 
-                    Toast.makeText(CadastroProduto.this, "Preencha todos os campos para cadastrar!!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(CadastroProduto.this, R.string.msg_alerta_cadastrar_produto, Toast.LENGTH_LONG).show();
 
                 }else{
                     CadastrarProduto();

@@ -53,7 +53,7 @@ public class Produtos {
 
     public String getValor() {return valor; }
 
-    public void setValor(String valorStg) { this.valor = valor; }
+    public void setValor(String valor) { this.valor = valor; }
 
     public String getQtd() { return qtd; }
 
