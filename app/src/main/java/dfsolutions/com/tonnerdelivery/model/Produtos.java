@@ -9,15 +9,13 @@ import dfsolutions.com.tonnerdelivery.config.ConfiguracaoFirebase;
  */
 public class Produtos {
 
-    private String tipo, marca, titulo, descricao, valorStg;
-    private double valorDb;
+    private String tipo, marca, titulo, descricao, valor, qtd;
 
     public Produtos() {
     }
 
     public void salvar(){
         DatabaseReference referenciaFirebase = ConfiguracaoFirebase.getFirebase();
-        valorDb = Double.parseDouble(valorStg);
         referenciaFirebase.child("produtos").setValue(this);
     }
 
@@ -53,20 +51,12 @@ public class Produtos {
         this.descricao = descricao;
     }
 
-    public double getValorDb() {
-        return valorDb;
-    }
+    public String getValor() {return valor; }
 
-    public void setValorDb(double valorDb) {
-        this.valorDb = valorDb;
-    }
+    public void setValor(String valorStg) { this.valor = valor; }
 
-    public String getValorStg() {
-        return valorStg;
-    }
+    public String getQtd() { return qtd; }
 
-    public void setValorStg(String valorStg) {
-        this.valorStg = valorStg;
-    }
+    public void setQtd( String qtd) { this.qtd = qtd; }
 
 }

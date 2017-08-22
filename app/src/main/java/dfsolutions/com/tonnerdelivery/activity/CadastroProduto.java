@@ -28,7 +28,7 @@ public class CadastroProduto extends AppCompatActivity {
     private String selecaoItemSpinnerProduto, selecaoItemSpinnerMarca;
     private ArrayList<String> listItemTipo;
     private ArrayList<String> listItemMarca;
-    private EditText titulo, descricao, valor;
+    private EditText titulo, descricao, valor, saldo;
     private Button botaoCadastrarProduto;
     private Produtos produtos;
 
@@ -43,6 +43,7 @@ public class CadastroProduto extends AppCompatActivity {
         titulo          = (EditText) findViewById(R.id.tv_titulo_produto_id);
         descricao       = (EditText) findViewById(R.id.tv_descricao_produto_id);
         valor           = (EditText) findViewById(R.id.tv_valor_produto_id);
+        saldo           = (EditText) findViewById(R.id.tv_qtd_produto_id);
         botaoCadastrarProduto = (Button) findViewById(R.id.bt_cadastrar_produto_id);
 
 
@@ -120,7 +121,6 @@ public class CadastroProduto extends AppCompatActivity {
                         selecaoItemSpinnerMarca = listItemMarca.get(5);
                         break;
                 }
-
             }
 
             @Override
@@ -129,29 +129,25 @@ public class CadastroProduto extends AppCompatActivity {
             }
         });
 
-
         botaoCadastrarProduto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Double valor1;
 
                 produtos = new Produtos();
                 produtos.setTipo(selecaoItemSpinnerProduto);
                 produtos.setMarca(selecaoItemSpinnerMarca);
                 produtos.setTitulo(titulo.getText().toString());
                 produtos.setDescricao(descricao.getText().toString());
-                //Log.i("VALOR", produtos.getValor().toString());
-
-                produtos.setValorStg(valor.getText().toString());
-                //produtos.setValor(Double.parseDouble(valor.getText().toString()));
-                //Log.i("VALOR", produtos.getValor().toString());
+                produtos.setValor(valor.getText().toString());
+                produtos.setQtd(saldo.getText().toString());
+                Log.i("SALDO: ", produtos.getQtd());
 
                 if(selecaoItemSpinnerProduto.equals("Selecione o tipo de produto") ||
                         selecaoItemSpinnerMarca.equals("Selecione a marca") ||
                         produtos.getTitulo().isEmpty() ||
                         produtos.getDescricao().isEmpty() ||
-                        produtos.getValorStg().isEmpty() ){
+                        produtos.getValor().isEmpty() ||
+                        produtos.getQtd().isEmpty()){
 
                     Toast.makeText(CadastroProduto.this, "Preencha todos os campos para cadastrar!!", Toast.LENGTH_LONG).show();
 
@@ -165,7 +161,7 @@ public class CadastroProduto extends AppCompatActivity {
     }
 
     private void CadastrarProduto(){
-
+        produtos.salvar();
     }
 
 }
