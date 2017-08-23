@@ -9,7 +9,7 @@ import dfsolutions.com.tonnerdelivery.config.ConfiguracaoFirebase;
  */
 public class Produtos {
 
-    private String tipo, marca, titulo, descricao, valor, qtd;
+    private String tipo, marca, titulo, descricao, valor, qtd, id;
 
     public Produtos() {
     }
@@ -47,9 +47,7 @@ public class Produtos {
         return descricao;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+    public void setDescricao(String descricao) { this.descricao = descricao; }
 
     public String getValor() {return valor; }
 
@@ -58,5 +56,9 @@ public class Produtos {
     public String getQtd() { return qtd; }
 
     public void setQtd( String qtd) { this.qtd = qtd; }
+
+    public String getId() { return id; }
+
+    public void setId( String id) { this.id = id; }
 
 }

@@ -19,6 +19,8 @@
     <string name="erro_excetion_cadastro_auth_user_colision">Email já cadastrado. Digite outro email</string>
     <string name="erro_excetion_cadastro_generico">Ao cadastrar usuário. Digite outro email</string>
     <!-- Atributos usados na Activity Cadastro de Produto -->
+    <string name="titulo_id_do_produto">Código Produto: </string>
+    <string name="hint_id_do_produto">Gerado ao finalizar cadastro</string>
     <string name="titulo_tipo_produto">Tipo de Produto: </string>
     <string name="titulo_marca_produto">Marca: </string>
     <string name="titulo_produto">Título: </string>
@@ -41,7 +43,7 @@
     <!-- Atributos usados nas Toolbars -->
     <string name="tb_title_cadastro_produto">Cadastrar Produto</string>
     <!-- Itens opçoes spinner Tipo de produto na tela cadastro produto -->
-    <string name="item_spinner_selecione_tipo_de_produto">Selecione o tipo de produto</string>
+    <string name="item_spinner_selecione_tipo_de_produto">Selecione o produto</string>
     <string name="item_spinner_cartucho">Cartucho</string>
     <string name="item_spinner_tonner">Tonner</string>
     <!-- Itens opçoes spinner Marca de produtos na tela cadastro produto -->

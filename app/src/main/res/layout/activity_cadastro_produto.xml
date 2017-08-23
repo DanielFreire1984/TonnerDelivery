@@ -10,41 +10,96 @@
         android:id="@+id/toolbar_cadastro_produto_id"
         layout="@layout/toolbar"/>
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/titulo_tipo_produto"
-        android:textColor="@color/textColorActivity"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:layout_marginTop="2dp"
-        android:layout_marginLeft="5dp"/>
+        android:orientation="horizontal"
+>
 
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/spinner_tipo_produto_id"
-        android:popupBackground="@android:color/white"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="5dp"/>
+        <ImageButton
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            android:background="@color/textColorHint"
+            android:src="@drawable/ic_add_a_photo" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/titulo_marca_produto"
-        android:textColor="@color/textColorActivity"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:layout_marginTop="2dp"
-        android:layout_marginLeft="5dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <Spinner
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/titulo_tipo_produto"
+                android:textColor="@color/textColorActivity"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinner_tipo_produto_id"
+                android:popupBackground="@android:color/white"
+                android:keepScreenOn="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/titulo_marca_produto"
+                android:textColor="@color/textColorActivity"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinner_marca_produto_id"
+                android:popupBackground="@android:color/white"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/spinner_marca_produto_id"
-        android:popupBackground="@android:color/white"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="5dp"/>
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/titulo_id_do_produto"
+            android:textColor="@color/textColorHint"
+            android:textSize="14sp"
+            android:textStyle="bold|italic"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="5dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hint_id_do_produto"
+            android:textColor="@color/textColorActivity"
+            android:textSize="14sp"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="5dp" />
+
+
+    </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
@@ -53,7 +108,7 @@
         android:textColor="@color/textColorActivity"
         android:textSize="14sp"
         android:textStyle="bold"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="5dp"
         android:layout_marginLeft="5dp"/>
 
     <EditText
