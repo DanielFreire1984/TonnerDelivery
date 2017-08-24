@@ -22,7 +22,7 @@
             android:id="@+id/img_produto_id"
             android:scaleType="centerCrop"
             android:background="@color/textColorHint"
-            android:src="@drawable/ic_add_a_photo" />
+            android:src="@drawable/ic_add_a_photo"/>
 
         <LinearLayout
             android:layout_width="match_parent"
