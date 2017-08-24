@@ -1,44 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/rl_wrapper_id"
     tools:context="dfsolutions.com.tonnerdelivery.activity.CadastroProduto">
 
     <include
         android:id="@+id/toolbar_cadastro_produto_id"
-        layout="@layout/toolbar"/>
+        layout="@layout/toolbar" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:orientation="horizontal"
->
+        android:layout_below="@id/toolbar_cadastro_produto_id"
+        android:id="@+id/foto_layout_id"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/screen_border">
 
         <ImageView
             android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_height="match_parent"
             android:id="@+id/img_produto_id"
             android:scaleType="centerCrop"
-            android:background="@color/textColorHint"
-            android:src="@drawable/ic_add_a_photo"/>
+            android:src="@drawable/ic_add_a_photo"
+            android:background="@drawable/screen_border"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/titulo_tipo_produto"
-                android:textColor="@color/textColorActivity"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:layout_marginTop="2dp"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="1" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginRight="10dp">
 
             <Spinner
                 android:layout_width="match_parent"
@@ -47,17 +44,6 @@
                 android:popupBackground="@android:color/white"
                 android:keepScreenOn="true"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="1" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/titulo_marca_produto"
-                android:textColor="@color/textColorActivity"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:layout_marginTop="2dp"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="1" />
 
@@ -72,133 +58,116 @@
 
         </LinearLayout>
 
-
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_below="@id/foto_layout_id"
+        android:id="@+id/layout_abaixo_foto_id"
+        android:orientation="vertical"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/screen_border">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/titulo_id_do_produto"
-            android:textColor="@color/textColorHint"
-            android:textSize="14sp"
-            android:textStyle="bold|italic"
-            android:layout_marginTop="2dp"
-            android:layout_marginLeft="5dp" />
-
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/hint_id_do_produto"
+            android:orientation="horizontal"
+            android:layout_below="@id/foto_layout_id">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/titulo_id_do_produto"
+                android:textColor="@color/textColorHint"
+                android:textSize="14sp"
+                android:textStyle="bold|italic"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hint_id_do_produto"
+                android:textColor="@color/textColorActivity"
+                android:textSize="14sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp" />
+
+
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:textColor="@color/textColorActivity"
-            android:textSize="14sp"
-            android:layout_marginTop="2dp"
-            android:layout_marginLeft="5dp" />
+            android:textColorHint="@color/textColorHint"
+            android:hint="@string/hint_titulo_produto"
+            android:id="@+id/tv_titulo_produto_id"
+            android:textSize="@dimen/ed_campos_cadastro"
+            android:background="@drawable/screen_border_editext"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/textColorActivity"
+            android:textColorHint="@color/textColorHint"
+            android:hint="@string/hint_descricao_produto"
+            android:id="@+id/tv_descricao_produto_id"
+            android:textSize="@dimen/ed_campos_cadastro"
+            android:background="@drawable/screen_border_editext"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:inputType="numberDecimal"
+            android:digits="0123456789.,"
+            android:textColor="@color/textColorActivity"
+            android:hint="@string/hint_valor_produto"
+            android:textColorHint="@color/textColorHint"
+            android:id="@+id/tv_valor_produto_id"
+            android:textSize="@dimen/ed_campos_cadastro"
+            android:background="@drawable/screen_border_editext"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:inputType="number"
+            android:textColor="@color/textColorActivity"
+            android:hint="@string/hint_qtd_produto"
+            android:textColorHint="@color/textColorHint"
+            android:id="@+id/tv_qtd_produto_id"
+            android:textSize="@dimen/ed_campos_cadastro"
+            android:background="@drawable/screen_border_editext"/>
 
 
     </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/titulo_produto"
-        android:textColor="@color/textColorActivity"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="5dp"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:layout_marginLeft="5dp"
-        android:textColor="@color/textColorActivity"
-        android:textColorHint="@color/textColorHint"
-        android:hint="@string/hint_titulo_produto"
-        android:id="@+id/tv_titulo_produto_id"
-        android:textSize="@dimen/ed_campos_cadastro" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/titulo_descricao_produto"
-        android:textColor="@color/textColorActivity"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:layout_marginTop="2dp"
-        android:layout_marginLeft="5dp"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:layout_marginLeft="5dp"
-        android:textColor="@color/textColorActivity"
-        android:textColorHint="@color/textColorHint"
-        android:hint="@string/hint_descricao_produto"
-        android:id="@+id/tv_descricao_produto_id"
-        android:textSize="@dimen/ed_campos_cadastro" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/titulo_valor_produto"
-        android:textColor="@color/textColorActivity"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:layout_marginTop="2dp"
-        android:layout_marginLeft="5dp"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:layout_marginLeft="5dp"
-        android:inputType="numberDecimal"
-        android:digits="0123456789.,"
-        android:textColor="@color/textColorActivity"
-        android:hint="@string/hint_valor_produto"
-        android:textColorHint="@color/textColorHint"
-        android:id="@+id/tv_valor_produto_id"
-        android:textSize="@dimen/ed_campos_cadastro" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/titulo_qtd_produto"
-        android:textColor="@color/textColorActivity"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:layout_marginTop="2dp"
-        android:layout_marginLeft="5dp"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:layout_marginLeft="5dp"
-        android:inputType="number"
-        android:textColor="@color/textColorActivity"
-        android:hint="@string/hint_qtd_produto"
-        android:textColorHint="@color/textColorHint"
-        android:id="@+id/tv_qtd_produto_id"
-        android:textSize="@dimen/ed_campos_cadastro" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/botao_cadastrar_produto"
         android:id="@+id/bt_cadastrar_produto_id"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginRight="5dp"
-        android:theme="@style/botaoPadrao"/>
+        android:theme="@style/botaoPadrao"
+        android:layout_alignParentBottom="true"/>
 
 
-</LinearLayout>
+</RelativeLayout>
