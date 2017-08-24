@@ -13,6 +13,8 @@
     <string name="action_sair">Sair</string>
     <string name="action_add_produto">Adicionar</string>
     <string name="msg_alerta_cadastrar_produto">Preencha todos os campos para cadastrar o produto</string>
+    <!-- Atributos usados pelo ProgressDialog -->
+    <string name="progress_dialog_login">Validando usuaário...</string>
     <!-- Atributos usados na Activity Cadastro Usuario utilizado no tratamento de exceptions de erros de cadastro -->
     <string name="erro_exception_cadastro_weak_password">Digite uma senha mais forte com mínimo 6 caracteres</string>
     <string name="erro_excetion_cadastro_auth_invalid">Digite um email válido</string>

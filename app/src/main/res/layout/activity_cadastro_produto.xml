@@ -16,9 +16,10 @@
         android:orientation="horizontal"
 >
 
-        <ImageButton
-            android:layout_width="180dp"
-            android:layout_height="180dp"
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/img_produto_id"
             android:scaleType="centerCrop"
             android:background="@color/textColorHint"
             android:src="@drawable/ic_add_a_photo" />
@@ -119,7 +120,8 @@
         android:textColor="@color/textColorActivity"
         android:textColorHint="@color/textColorHint"
         android:hint="@string/hint_titulo_produto"
-        android:id="@+id/tv_titulo_produto_id"/>
+        android:id="@+id/tv_titulo_produto_id"
+        android:textSize="@dimen/ed_campos_cadastro" />
 
     <TextView
         android:layout_width="match_parent"
@@ -139,7 +141,8 @@
         android:textColor="@color/textColorActivity"
         android:textColorHint="@color/textColorHint"
         android:hint="@string/hint_descricao_produto"
-        android:id="@+id/tv_descricao_produto_id" />
+        android:id="@+id/tv_descricao_produto_id"
+        android:textSize="@dimen/ed_campos_cadastro" />
 
     <TextView
         android:layout_width="match_parent"
@@ -161,7 +164,8 @@
         android:textColor="@color/textColorActivity"
         android:hint="@string/hint_valor_produto"
         android:textColorHint="@color/textColorHint"
-        android:id="@+id/tv_valor_produto_id" />
+        android:id="@+id/tv_valor_produto_id"
+        android:textSize="@dimen/ed_campos_cadastro" />
 
     <TextView
         android:layout_width="match_parent"
@@ -182,7 +186,8 @@
         android:textColor="@color/textColorActivity"
         android:hint="@string/hint_qtd_produto"
         android:textColorHint="@color/textColorHint"
-        android:id="@+id/tv_qtd_produto_id" />
+        android:id="@+id/tv_qtd_produto_id"
+        android:textSize="@dimen/ed_campos_cadastro" />
 
     <Button
         android:layout_width="match_parent"

@@ -1,6 +1,7 @@
 package dfsolutions.com.tonnerdelivery.activity;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -41,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button botaoLogar;
     private Usuario usuario;
     private FirebaseAuth autenticacao;
+    private ProgressDialog mProgressDialog;
 
     //lista de permissoes necessárias para utilizar o app
     private String[] permissoesNecessarias = {
@@ -57,6 +59,8 @@ public class LoginActivity extends AppCompatActivity {
 
         verificarUsuarioLogado();
 
+        mProgressDialog = new ProgressDialog(this);
+
         email = (EditText) findViewById(R.id.email_id);
         senha = (EditText) findViewById(R.id.senha_id);
         botaoLogar = (Button) findViewById(R.id.botao_logar_id);
@@ -72,6 +76,9 @@ public class LoginActivity extends AppCompatActivity {
                     String emailUsuario = email.getText().toString();
                     usuario.setEmail(emailUsuario);
                     usuario.setSenha(senha.getText().toString());
+
+                    mProgressDialog.setMessage("Validando usuário...");
+                    mProgressDialog.show();
 
                     //Salvando dados em Preferencias (SharedPreference)
                     Preferencias preferencias = new Preferencias(getApplicationContext());
@@ -104,6 +111,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+                    mProgressDialog.dismiss();
                     Toast.makeText(LoginActivity.this, "Usuário logado com sucesso", Toast.LENGTH_SHORT).show();
                     abrirTelaPrincipal();
                 }else{

@@ -1,6 +1,10 @@
 package dfsolutions.com.tonnerdelivery.activity;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.res.Resources;
+import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -10,8 +14,17 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -19,6 +32,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import dfsolutions.com.tonnerdelivery.R;
+import dfsolutions.com.tonnerdelivery.config.ConfiguracaoFirebase;
 import dfsolutions.com.tonnerdelivery.model.Produtos;
 
 public class CadastroProduto extends AppCompatActivity {
@@ -30,12 +44,20 @@ public class CadastroProduto extends AppCompatActivity {
     private ArrayList<String> listItemMarca;
     private EditText titulo, descricao, valor, saldo;
     private Button botaoCadastrarProduto;
+    private ImageView imagemProduto;
     private Produtos produtos;
+    private static final int GALLERY_INTENT = 2;
+    private static Uri uri;
+    private ProgressDialog mProgressCadastrar;
+
+    private StorageReference storageFirebase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_produto);
+
+        storageFirebase = ConfiguracaoFirebase.referenciaStorage();
 
         toolbar         = (Toolbar) findViewById(R.id.toolbar_cadastro_produto_id);
         spinnerProduto  = (Spinner) findViewById(R.id.spinner_tipo_produto_id);
@@ -44,8 +66,11 @@ public class CadastroProduto extends AppCompatActivity {
         descricao       = (EditText) findViewById(R.id.tv_descricao_produto_id);
         valor           = (EditText) findViewById(R.id.tv_valor_produto_id);
         saldo           = (EditText) findViewById(R.id.tv_qtd_produto_id);
+        imagemProduto   = (ImageView) findViewById(R.id.img_produto_id);
         botaoCadastrarProduto = (Button) findViewById(R.id.bt_cadastrar_produto_id);
 
+        //Setando ProgressDialog
+        mProgressCadastrar = new ProgressDialog(this);
 
         //Configurando a toolbar
         toolbar.setTitle(R.string.tb_title_cadastro_produto);
@@ -152,9 +177,45 @@ public class CadastroProduto extends AppCompatActivity {
             }
         });
 
+        imagemProduto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_PICK);
+                intent.setType("image/*");
+                startActivityForResult(intent, GALLERY_INTENT);
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == GALLERY_INTENT && resultCode == RESULT_OK){
+
+            uri = data.getData();
+            imagemProduto.setImageURI(uri);
+
+        }
     }
 
     private void CadastrarProduto(){
+
+        StorageReference filePath = storageFirebase.child("Fotos").child(uri.getLastPathSegment());
+        filePath.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                Toast.makeText(CadastroProduto.this, "Upload completo", Toast.LENGTH_SHORT).show();
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(CadastroProduto.this, "Falha ao carregar a imagem. Tente novamente", Toast.LENGTH_LONG).show();
+            }
+        });
+
         produtos.salvar();
     }
 
