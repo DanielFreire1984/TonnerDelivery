@@ -49,7 +49,7 @@
     <string name="item_spinner_cartucho">Cartucho</string>
     <string name="item_spinner_tonner">Tonner</string>
     <!-- Itens opçoes spinner Marca de produtos na tela cadastro produto -->
-    <string name="item_spinner_marca_selecione_a_marca">Selecione a marca</string>
+    <string name="item_spinner_marca_selecione_a_marca" >Selecione a marca</string>
     <string name="item_spinner_marca_hp">HP</string>
     <string name="item_spinner_marca_canon">Canon</string>
     <string name="item_spinner_marca_epson">Epson</string>

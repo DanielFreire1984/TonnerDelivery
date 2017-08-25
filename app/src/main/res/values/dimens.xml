@@ -6,5 +6,5 @@
     <dimen name="altura_logo">220dp</dimen>
     <dimen name="largura_logo_cadastro">150dp</dimen>
     <dimen name="altura_logo_cadastro">113dp</dimen>
-    <dimen name="ed_campos_cadastro">16sp</dimen>
+    <dimen name="ed_campos_cadastro">18sp</dimen>
 </resources>

@@ -49,6 +49,7 @@ public class CadastroProduto extends AppCompatActivity {
     private static final int GALLERY_INTENT = 2;
     private static Uri uri;
     private ProgressDialog mProgressCadastrar;
+    private ProgressDialog mProgressDialog;
 
     private StorageReference storageFirebase;
 
@@ -58,6 +59,8 @@ public class CadastroProduto extends AppCompatActivity {
         setContentView(R.layout.activity_cadastro_produto);
 
         storageFirebase = ConfiguracaoFirebase.referenciaStorage();
+
+        mProgressDialog = new ProgressDialog(this);
 
         toolbar         = (Toolbar) findViewById(R.id.toolbar_cadastro_produto_id);
         spinnerProduto  = (Spinner) findViewById(R.id.spinner_tipo_produto_id);
@@ -201,12 +204,18 @@ public class CadastroProduto extends AppCompatActivity {
 
     private void CadastrarProduto(){
 
+        mProgressDialog.setMessage("Carregando dados...");
+        mProgressDialog.show();
+
         StorageReference filePath = storageFirebase.child("Fotos").child(uri.getLastPathSegment());
         filePath.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
+                mProgressDialog.dismiss();
+
                 Toast.makeText(CadastroProduto.this, "Upload completo", Toast.LENGTH_SHORT).show();
+                finish();
 
             }
         }).addOnFailureListener(new OnFailureListener() {
