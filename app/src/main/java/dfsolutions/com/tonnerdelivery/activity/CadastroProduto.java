@@ -2,7 +2,6 @@ package dfsolutions.com.tonnerdelivery.activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -14,25 +13,22 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import dfsolutions.com.tonnerdelivery.R;
 import dfsolutions.com.tonnerdelivery.config.ConfiguracaoFirebase;
+import dfsolutions.com.tonnerdelivery.helper.Base64Custom;
 import dfsolutions.com.tonnerdelivery.model.Produtos;
 
 public class CadastroProduto extends AppCompatActivity {
@@ -82,13 +78,13 @@ public class CadastroProduto extends AppCompatActivity {
 
         //Configurando os Spinners e os Adapters
         ArrayAdapter<String> spinnerAdapterProduto = new ArrayAdapter<String>(CadastroProduto.this,
-                R.layout.snipper_item, getResources().getStringArray(R.array.spinner_produto_options));
-        spinnerAdapterProduto.createFromResource(this, R.array.spinner_produto_options, R.layout.snipper_item);
+                R.layout.spinner_item, getResources().getStringArray(R.array.spinner_produto_options));
+        spinnerAdapterProduto.createFromResource(this, R.array.spinner_produto_options, R.layout.spinner_item);
         spinnerProduto.setAdapter(spinnerAdapterProduto);
 
         ArrayAdapter<String> spinnerAdapterMarca = new ArrayAdapter<String>(CadastroProduto.this,
-                R.layout.snipper_item, getResources().getStringArray(R.array.spinner_marca_options));
-        spinnerAdapterMarca.createFromResource(this, R.array.spinner_marca_options, R.layout.snipper_item);
+                R.layout.spinner_item, getResources().getStringArray(R.array.spinner_marca_options));
+        spinnerAdapterMarca.createFromResource(this, R.array.spinner_marca_options, R.layout.spinner_item);
         spinnerMarca.setAdapter(spinnerAdapterMarca);
 
         //Tratando a selecao do Snipper tipo de Produto
@@ -207,13 +203,16 @@ public class CadastroProduto extends AppCompatActivity {
         mProgressDialog.setMessage("Carregando dados...");
         mProgressDialog.show();
 
-        StorageReference filePath = storageFirebase.child("Fotos").child(uri.getLastPathSegment());
+        String idProduto = Base64Custom.codificarBase64(produtos.getTitulo());
+        produtos.setId(idProduto);
+        String idFotoProduto = produtos.getId();
+
+        StorageReference filePath = storageFirebase.child("Fotos").child(idFotoProduto);
         filePath.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
                 mProgressDialog.dismiss();
-
                 Toast.makeText(CadastroProduto.this, "Upload completo", Toast.LENGTH_SHORT).show();
                 finish();
 

@@ -4,14 +4,12 @@
     android:layout_height="match_parent"
     tools:context="dfsolutions.com.tonnerdelivery.fragment.ProdutosFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <TextView
-        android:layout_width="wrap_content"
+    <ListView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Produtos"
-        android:id="@+id/textView2"
-        android:layout_gravity="center"
-        android:textColor="@android:color/black" />
+        android:id="@+id/lv_produtos_id"
+        android:divider="@color/colorPrimaryDark"
+        android:dividerHeight="1dp"
+        android:layout_gravity="center_horizontal|top" />
+
 </FrameLayout>

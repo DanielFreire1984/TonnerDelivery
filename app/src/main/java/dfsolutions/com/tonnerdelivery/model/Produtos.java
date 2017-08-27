@@ -16,7 +16,7 @@ public class Produtos {
 
     public void salvar(){
         DatabaseReference referenciaFirebase = ConfiguracaoFirebase.getFirebase();
-        referenciaFirebase.child("produtos").setValue(this);
+        referenciaFirebase.child("produtos").child(this.getId()).setValue(this);
     }
 
     public String getTipo() {

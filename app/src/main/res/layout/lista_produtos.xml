@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        android:id="@+id/iv_imagem_produto_fragment_id"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="vertical"
+        android:id="@+id/lv_lista_produto_fragment_id">
+
+        <TextView
+            android:id="@+id/tv_titulo_id"
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:text="Título produto"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_valor_fragment_produtod_id"
+            android:layout_height="30dp"
+            android:layout_width="match_parent"
+            android:text="Valor"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:paddingLeft="10dp"
+            android:paddingBottom="5dp"/>
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>
+
+
