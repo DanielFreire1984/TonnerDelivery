@@ -74,7 +74,7 @@ public class ProdutosFragment extends Fragment {
         //Recuperando produtos do Firebase database
         firebase = ConfiguracaoFirebase.getFirebase().child("produtos");
 
-        //Listener para recuperar contatos
+        //Listener para recuperar produtos
         valueEventListenerProduto = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

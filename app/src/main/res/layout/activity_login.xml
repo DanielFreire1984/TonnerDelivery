@@ -8,7 +8,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="dfsolutions.com.tonnerdelivery.activity.LoginActivity"
-    android:background="@color/colorPrimary">
+    android:background="@color/colorPrimary"
+    android:gravity="center_horizontal|center_vertical">
 
     <ImageView
         android:layout_width="@dimen/largura_logo"
@@ -16,7 +17,8 @@
         android:id="@+id/imageView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/logo" />
+        android:background="@drawable/tonner_delivery_marca_branca"
+        android:scaleType="fitCenter" />
 
     <EditText
         android:layout_width="fill_parent"
@@ -28,7 +30,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:hint="@string/hint_email"
-        android:textColor="@color/textColorPrimary"/>
+        android:textColor="@color/textColorPrimary"
+        android:layout_marginTop="20dp"/>
 
     <EditText
         android:layout_width="fill_parent"
@@ -65,7 +68,7 @@
         android:textColor="@color/textColorPrimary"
         android:onClick="abrirCadastroUsuario"/>
 
-
+    <!--
     <com.facebook.login.widget.LoginButton
         android:id="@+id/login_button_fb"
         android:layout_width="wrap_content"
@@ -74,6 +77,6 @@
         android:layout_marginTop="37dp"
         android:layout_below="@+id/textView"
         android:layout_alignLeft="@+id/textView"
-        android:layout_alignStart="@+id/textView" />
+        android:layout_alignStart="@+id/textView" /> -->
 
 </RelativeLayout>

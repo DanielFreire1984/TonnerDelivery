@@ -15,7 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.facebook.login.widget.LoginButton;
+//import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -31,8 +31,8 @@ import dfsolutions.com.tonnerdelivery.config.ConfiguracaoFirebase;
 import dfsolutions.com.tonnerdelivery.helper.Permissoes;
 import dfsolutions.com.tonnerdelivery.helper.Preferencias;
 import dfsolutions.com.tonnerdelivery.model.Usuario;
-import com.facebook.FacebookSdk;
-import com.facebook.appevents.AppEventsLogger;
+//import com.facebook.FacebookSdk;
+//import com.facebook.appevents.AppEventsLogger;
 
 
 public class LoginActivity extends AppCompatActivity {

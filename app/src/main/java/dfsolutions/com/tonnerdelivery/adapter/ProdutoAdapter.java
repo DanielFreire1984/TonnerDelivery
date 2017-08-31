@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ public class ProdutoAdapter extends ArrayAdapter<Produtos> {
     private ArrayList<Produtos> produtos;
     private Context context;
     private StorageReference storageFirebase;
+    private Uri uri;
 
     public ProdutoAdapter(Context c, ArrayList<Produtos> objects) {
         super(c, 0, objects);
@@ -37,6 +39,8 @@ public class ProdutoAdapter extends ArrayAdapter<Produtos> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = null;
+
+        storageFirebase = ConfiguracaoFirebase.referenciaStorage();
 
         //verifica se a lista de produtos está vazia
         if(produtos != null){
@@ -60,7 +64,6 @@ public class ProdutoAdapter extends ArrayAdapter<Produtos> {
             storageFirebase = ConfiguracaoFirebase.referenciaStorage().child("fotos").child(pathFotoId);
             ImageView imagemProduto = (ImageView) view.findViewById(R.id.iv_imagem_produto_fragment_id);
             imagemProduto.setImageURI(Uri.parse(pathFotoId));
-
 
         }
 

@@ -56,6 +56,8 @@ public class CadastroProduto extends AppCompatActivity {
 
         storageFirebase = ConfiguracaoFirebase.referenciaStorage();
 
+        //Setando ProgressDialog
+        mProgressCadastrar = new ProgressDialog(this);
         mProgressDialog = new ProgressDialog(this);
 
         toolbar         = (Toolbar) findViewById(R.id.toolbar_cadastro_produto_id);
@@ -67,9 +69,6 @@ public class CadastroProduto extends AppCompatActivity {
         saldo           = (EditText) findViewById(R.id.tv_qtd_produto_id);
         imagemProduto   = (ImageView) findViewById(R.id.img_produto_id);
         botaoCadastrarProduto = (Button) findViewById(R.id.bt_cadastrar_produto_id);
-
-        //Setando ProgressDialog
-        mProgressCadastrar = new ProgressDialog(this);
 
         //Configurando a toolbar
         toolbar.setTitle(R.string.tb_title_cadastro_produto);
