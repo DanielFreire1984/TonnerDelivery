@@ -2,6 +2,7 @@ package dfsolutions.com.tonnerdelivery.activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -191,8 +192,9 @@ public class CadastroProduto extends AppCompatActivity {
 
         if(requestCode == GALLERY_INTENT && resultCode == RESULT_OK){
 
-            uri = data.getData();
+            uri = data.getData(); // declare as global var into this class
             imagemProduto.setImageURI(uri);
+
 
         }
     }

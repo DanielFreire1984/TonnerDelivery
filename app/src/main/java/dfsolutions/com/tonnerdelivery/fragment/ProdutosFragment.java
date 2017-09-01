@@ -63,11 +63,6 @@ public class ProdutosFragment extends Fragment {
 
         //Monta listview e o adapter
         listView = (ListView) view.findViewById(R.id.lv_produtos_id);
-        /*adapter = new ArrayAdapter(
-                getActivity(),
-                R.layout.lista_produtos,
-                produtosList
-        ); */
         adapter = new ProdutoAdapter(getActivity(), produtosList);
         listView.setAdapter(adapter);
 
